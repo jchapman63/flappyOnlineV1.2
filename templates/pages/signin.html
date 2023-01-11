@@ -1,0 +1,21 @@
+{% extends "base_templates/home.html" %}{% load static %} {% block content %}
+<!-- login form  -->
+<form action="" class="login-form" id="login-form" method="post">
+  {% csrf_token %}
+  <h2>Access Your Stats</h2>
+  <label for="">username</label>
+  <input type="text" name="username" id="username" />
+  <label for="">password</label>
+  <input type="password" name="password" id="password" />
+  <div class="submissions">
+    <button type="submit" form="login-form">Sign in</button>
+    <p>OR</p>
+    <a href="{% url 'game' %}" class="guest-btn">Guest</a>
+  </div>
+  <p>
+    Don't have an account?
+    <a href="{% url 'register' %}" class="switch-signin-link">sign up</a>!
+  </p>
+</form>
+
+{% endblock %}

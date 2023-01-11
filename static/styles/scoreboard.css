@@ -1,0 +1,83 @@
+
+
+.score-interface {
+    position: relative;
+    margin: 1rem;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-x:auto;
+
+}
+
+.score-interface h1 {
+    color: white;
+    display: block;
+    font-size: 5rem;
+    margin: 3rem 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.score-interface table {
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    table-layout: fixed;
+    background-color: #6CC06F;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
+th {
+    padding: 1rem;
+    overflow: hidden;
+}
+
+tr {
+    background-color: #6CC06F;
+}
+
+tr:nth-child(2n+2) {
+    background-color:#4BAE4E;
+}
+
+td img {
+    width: 30%;
+    margin: 0;
+}
+
+td {
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+
+tfoot {
+    text-align: center;
+}
+
+
+@media (max-width: 850px) {
+    table {
+        display: block;
+        /* width: max-content; */
+    }
+    .score-interface {
+        padding: 0rem;
+        overflow-x: scroll;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    td img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+@font-face {
+    font-family: flappy-font;
+    src: url(FlappyBirdy.ttf);
+}
+
+/* footer styles */
+footer {
+    background-color: #4BAE4E;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: inherit;
+}

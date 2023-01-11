@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: flappy-font;
+}
+
+@font-face {
+    font-family: flappy-font;
+    src: url(FlappyBirdy.ttf);
+}
+
+/* game over styles */
+.game-over {
+    align-items: center;
+    background-color: #4BAE4E;
+    border: 1px solid white;
+    box-shadow: 1px 3px 1px 5px black;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    margin-top: 5rem;
+    position: relative;
+    padding: 1rem;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    visibility: hidden;
+    width: 50%;
+
+    z-index: 10;
+}
+
+.game-over h1 {
+    font-size: 8rem;
+}
+
+.game-over p {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.game-over .score-elem {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+}
+
+.game-over .options {
+    justify-content: center;
+    display: flex;
+    gap: 3rem;
+    margin: 1rem;
+}
+
+.options button {
+    border: 3px solid black;
+    border-radius: 3px;
+    font-size: 3rem;
+    font-family: flappy-font;
+    padding: 0.75rem 1.25rem;
+}
+
+.options button:hover {
+    background-color: #4BAE4E;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.options a {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 3px;
+    font-size: 3rem;
+    font-family: flappy-font;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.options a:hover {
+    background-color: #4BAE4E;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+/* game styles */
+.game-main {
+    background-image: url('flappy.png');
+    background-size: cover;
+    border-bottom: 5px solid black;
+    height: 90vh;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
+.score {
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    font-size: 3rem;
+
+    z-index: 5;
+}
+
+/* tube styles */
+.tube-home {
+    z-index: 0;
+}
+
+.tube {
+    --tube-start-x: 15;
+    --tube-length: 0;
+    
+    /* border-bottom: 5px solid black; */
+    height: calc(var(--tube-length)*1px);
+    position: absolute;
+    right:calc(var(--tube-start-x)*1%);
+    width: 10%;
+  }
+  
+  .tube-bottom {
+    --tube-bottom-start-y: -5;
+  
+    bottom: calc(var(--tube-bottom-start-y)*1%);
+  }
+  
+  .tube-top {
+    --tube-top-start-y: -5;
+  
+    border-bottom: none;
+    top: calc(var(--tube-top-start-y)*1%);
+    transform: rotate(180deg);
+  }
+
+  /* bird styles */
+.birdy {
+    --y: 49;
+    --rotator: 0;
+
+    animation: none;
+    border-radius: 100%;
+    /* height: 100px; */
+    position: absolute;
+    width: 100px;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    transform: rotate(calc(var(--rotator)*1deg));
+    left: 45%;
+    top: calc(var(--y)*1%);
+  }
+
+.hide-elem {
+    display: none;
+}
+
+@media (max-width: 880px) {
+    .game-over {
+        margin: 2rem 0;
+        width: 80%;
+    }
+
+    .game-over h1 {
+        font-size: 4rem;
+    }
+
+    .game-over p {
+        font-size: 2rem;
+    }
+
+    .game-over .options {
+        flex-direction: column;
+    }
+
+    .game-over .score-elem {
+        font-size: 2rem;
+    }
+
+    .birdy {
+        width: 75px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 625px) {
+    .birdy {
+        width: 60px;
+        height: 45px;
+    }
+
+    .tube {
+        width: 17.5%;
+    }
+}
+

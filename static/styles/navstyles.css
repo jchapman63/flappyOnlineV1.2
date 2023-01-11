@@ -1,0 +1,89 @@
+@font-face {
+    font-family: flappy-font;
+    src: url(FlappyBirdy.ttf);
+}
+
+/* nav styles */
+nav {
+    background-color: #4BAE4E;
+    border-bottom: 5px solid black;
+    color: white;
+    display: flex;
+    letter-spacing: 2px;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: black;
+}
+
+nav h1 {
+    align-self: center;
+    font-size: 4rem;
+}
+
+nav ul {
+    align-self: center;
+    font-size: 2.25rem;
+    margin-left: auto;
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+    padding: 1rem
+}
+
+nav li:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .reg-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+        position: relative;
+        padding: 0;
+    }
+
+    .static-links {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    .mobile-nav img {
+        display: block;
+        width: 15%;
+        position: relative;
+        right: 0;
+        top: 25%;
+        margin-left: auto;
+    }
+
+    .side-content {
+        background-color: #6CC06F;
+        display: none;
+        overflow: hidden;
+        padding: 1rem;
+    }
+
+    .side-content li {
+        display: block;
+        padding: 0.5rem 0;
+    }
+}

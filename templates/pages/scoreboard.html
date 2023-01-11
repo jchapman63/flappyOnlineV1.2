@@ -1,0 +1,38 @@
+{% extends "base_templates/home.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/scoreboard.css' %}" />
+<div class="score-interface">
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Rank</th>
+        <th>Flaps</th>
+        <th>Games Played</th>
+        <th>High Score</th>
+        <th>Birdy</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in allusers %}
+      <tr>
+        <td>{{user.get_username}}</td>
+        <td>{{user.profile.rank}}</td>
+        <td>{{user.profile.flaps}}</td>
+        <td>{{user.profile.gamesPlayed}}</td>
+        <td>{{user.profile.highScore}}</td>
+        <td>
+          <img src="{% static user.profile.currentBirdy %}" alt="" />
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="6">The Official Flappy Online Scoreboard</td>
+      </tr>
+    </tfoot>
+  </table>
+  <br />
+</div>
+{% endblock %}

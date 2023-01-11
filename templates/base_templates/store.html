@@ -1,0 +1,41 @@
+{% extends "pages/account.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/store.css' %}" />
+<div class="store-interface">
+  <h1>Flappy Online Store</h1>
+  <h2>Collect coins and purchase items!</h2>
+  <div class="cards-container">
+    {% for bird in birds %}
+    <div class="purchase-card">
+      <img class="birdy" src="{% static bird.img %}" alt="" />
+      <h3>{{bird.name}}</h3>
+      {% if bird.name in userBirds %}
+      <button>OWNED!</button>
+      {% else %}
+      <button class="buy-btn">
+        {{bird.price}} <img src="{% static 'images/coin.png' %}" alt="" />
+      </button>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <form action="" method="post" class="hide-elem" id="purchase-form">
+    {% csrf_token %}
+    <input type="text" name="purchase" id="purchase" />
+  </form>
+  <script>
+    var buttons = document.getElementsByClassName("buy-btn");
+    let input = document.getElementById("purchase");
+    let form = document.getElementById("purchase-form");
+    Array.from(buttons).forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        var parent = button.parentElement;
+        var purchaseOption = parent.children[1].innerText;
+        input.setAttribute("value", purchaseOption);
+        console.log(input.getAttribute("value"));
+        form.submit();
+      });
+    });
+  </script>
+</div>
+{% endblock %}

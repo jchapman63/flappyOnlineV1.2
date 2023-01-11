@@ -1,0 +1,147 @@
+/* account details section */
+
+.my-basics {
+    margin-top: 1rem;
+ }
+ 
+ .my-basics h1, h2 {
+     text-align: center;
+ }
+ 
+ .my-basics h1 {
+     font-size: 4rem;
+     margin: 1rem 0;
+ }
+ 
+ .intro {
+     font-size: 2.5;
+     margin-bottom: 2rem;
+ }
+ 
+ .user-stats-menus {
+     justify-content: center;
+     color: white;
+     display: grid;
+     grid-template-columns: 45% 45%;
+     gap: 2rem;
+     margin-bottom: 2rem;
+     position: relative;
+ }
+ 
+ .user-stats-menus h2 {
+     background-color: #6CC06F;
+     border-radius: 3px;
+     text-align: left;
+     padding: 1rem;
+ }
+ 
+ .fluid-stats {
+     background-color: #4BAE4E;
+     border-radius: 3px;
+     text-align: center;
+     padding: 2rem 0 ;
+ }
+ 
+ .fluid-stats h3 {
+     font-size: 2rem;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .fluid-stats p {
+     font-size: 1.25rem;
+     margin-bottom: 2rem;
+ }
+ 
+ .user-birdy {
+     background-color: #4BAE4E;
+     border-radius: 3px;
+     text-align: center;
+ 
+ }
+ 
+ .birdy-settings {
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .birdy {
+     margin: 4rem 0 5rem;
+     width: 25%;
+     
+ }
+ 
+ .change-birdy-button {
+     border: 1px solid white;
+     color: white;
+     text-decoration: none;
+     font-size: 1.5rem;
+     padding: 1rem 1.5rem;
+ }
+ 
+ .change-birdy-button:hover {
+     background-color: white;
+     color: black;
+     cursor: pointer;
+ }
+
+@media (max-width: 956px) {
+    .user-stats, .user-birdy {
+        width: 300px;
+    }
+
+    .user-stats-menus {
+        justify-items: center;
+        grid-template-columns: 50% 50%;
+        margin-bottom: 2rem;
+    }
+
+    .my-basics {
+        width: 100%;
+        /* align-self: center; */
+        justify-self: center;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .my-basics h1 {
+        font-size: 1.5rem;
+    }
+
+    .my-basics h2 {
+        font-size: 1.25rem;
+    }
+
+    .user-stats-menus {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    .user-stats, .user-birdy {
+        width: 300px;
+        
+    }
+
+    .user-stats-menus h2 {
+        font-size: 1.25rem;
+    }
+
+    .user-stats h3 {
+        font-size: 1.25rem;
+    }
+
+    .user-birdy {
+        padding-bottom: 1rem;
+    }
+
+    .user-birdy img {
+        width: 50%;
+    }
+
+    .change-birdy-button {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+}
+ 

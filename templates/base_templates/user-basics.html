@@ -1,0 +1,37 @@
+{% extends 'pages/account.html' %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/user-basics.css' %}" />
+
+<div class="my-basics" id="my-basics">
+  <div class="basics-menu">
+    <h1>Welcome {{ user.get_username }}</h1>
+    <h2 class="intro">Here's a run down of your basics</h2>
+    <div class="user-stats-menus">
+      <div class="user-stats">
+        <h2>{{ user.get_username }}'s Stats</h2>
+        <div class="fluid-stats">
+          <h3>Flaps</h3>
+          <p>{{user.profile.flaps}}</p>
+          <h3>Games Played</h3>
+          <p>{{user.profile.gamesPlayed}}</p>
+          <h3>High Score</h3>
+          <p>{{user.profile.highScore}}</p>
+        </div>
+      </div>
+      <div class="user-birdy">
+        <h2>{{ user.get_username }}'s birdy</h2>
+        <div class="birdy-settings">
+          <img
+            class="birdy"
+            id="birdy"
+            src="{% static user.profile.currentBirdy %}"
+            alt=""
+          />
+          <a href="{% url 'inventory' %}" class="change-birdy-button"
+            >Select Birdy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

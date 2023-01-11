@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/birdy.png'%}"
+    />
+
+    <script>
+      var my_var = "{% static 'images/birdy.png' %}";
+
+      var my_var1 = "{% static 'images/flappy.png' %}";
+
+      var tube_img = "{% static 'images/tube2.png' %}";
+    </script>
+
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+    <title>Flappy Online</title>
+  </head>
+  <body>
+    {% include "base_templates/navbar.html" %}
+
+    <div id="ani-window" class="home-main">
+      <!-- <img src="images/flappy.png" class="home-background" alt="" /> -->
+      <div class="home-content">
+        <h1>Flappy Online</h1>
+        <h2>The online competitive Flappy Game</h2>
+        {% block content%} {% endblock %}
+      </div>
+    </div>
+    <div>{% block discussion %} {%endblock%}</div>
+    {% include "base_templates/footer.html"%}
+
+    <!-- <img class="birdy" id="birdy" src="images/birdy.png" alt="" /> -->
+    <script type="module" src="{% static 'animations/HomeAni.js' %}"></script>
+  </body>
+</html>

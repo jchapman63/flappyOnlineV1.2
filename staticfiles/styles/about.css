@@ -1,0 +1,171 @@
+.flex-container-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 6rem;
+}
+
+.flex-container-horizontal {
+    color: white;
+    box-shadow: 1px 3px 1px 3px black;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 3rem 6rem 5rem;
+    padding: 1rem;
+}
+
+.container-round {
+    background-color: #6CC06F;
+    border-radius: 3px;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-cont {
+    align-self: flex-start;
+    height: fit-content;
+    text-align: left;
+}
+
+.border-black {
+    border: 2px solid black;
+}
+
+.container-round h1 {
+    font-size: 2rem;
+}
+
+.container-round p {
+    line-height: 1.5;
+    font-size: 1.25rem;
+}
+
+.container-round img {
+    width: 40%;
+    margin-left: auto;
+}
+
+.container-round a {
+    align-self: flex-start;
+    justify-self: flex-end;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    color: black;
+    font-size: 3rem;
+    font-family: flappy-font;
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem;
+    text-decoration: none;
+}
+
+.container-round a:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #6CC06F;
+    border: 3px solid white;
+}
+
+.list-collection-horizontal {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 1rem;
+}
+
+.list-collection-item ul {
+    margin: 0.5rem;
+    list-style: none;
+}
+
+.list-collection-item li {
+    margin-bottom: 0.25rem;
+}
+
+.green-bg {
+    background-color: #6CC06F;
+    color: white;
+    
+}
+
+.accordion-section {
+    border: 3px solid black;
+}
+
+.accordion {
+    background-color: #6CC06F;
+    color: white;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    
+    transition: 0.4s;
+  }
+
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .panel {
+    padding: 1.5rem;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .panel p {
+      font-size: 1.5rem;
+      line-height: 2;
+  }
+
+  @media (max-width: 950px) {
+    .flex-container-horizontal {
+        color: white;
+        box-shadow: 1px 3px 1px 3px black;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 3rem .8rem 5rem;
+        padding: 1rem;
+    }
+
+    .container-round a {
+        align-self: center;
+        justify-self: center;
+    }
+    
+    .hero-img {
+        display: none;
+    }
+
+    .panel {
+        background-color: #6CC06F;
+    }
+    .panel p {
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    .list-collection-horizontal {
+        color: white;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .list-collection-horizontal ul {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+    
+  }

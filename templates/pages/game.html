@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/game.css' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/birdy.png'%}"
+    />
+    <script>
+      var birdy_img = "{% static 'images/birdy.png' %}";
+
+      var birdy_down_img = "{% static 'images/birdyDown.png' %}";
+
+      var my_var1 = "{% static 'images/flappy.png' %}";
+
+      var tube_img = "{% static 'images/tube2.png' %}";
+
+      var flap_sound = "{% static 'sounds/sfx_wing.wav' %}";
+
+      var score_sound = "{% static 'sounds/sfx_point.wav'%}";
+
+      var death_sound = "{% static 'sounds/sfx_hit.wav' %}";
+    </script>
+    <title>Flappy Online</title>
+  </head>
+  <body>
+    {% include "base_templates/navbar.html" %}
+    <!-- <div class="ref-test"></div> -->
+    <div class="game-main" id="ani-window">
+      {% if user.is_authenticated %}
+      <script>
+        birdy_img = "{%static user.profile.currentBirdy %}";
+        birdy_down_img = "{%static user.profile.currentBirdyDown %}";
+        window.localStorage.setItem("user-active", true);
+      </script>
+      {% else %}
+      <script>
+        window.localStorage.setItem("user-active", false);
+      </script>
+      {% endif %}
+      <div class="game-over" id="game-over">
+        <h1>GAME OVER</h1>
+        <p>Your score was: <span class="score-elem" id="score-elem"></span></p>
+        <div class="options">
+          <button id="reset">Play Again</button>
+          <a href="{% url 'scoreboard' %}" id="scoreboard">Scoreboard</a>
+        </div>
+      </div>
+    </div>
+    {% if user.is_authenticated %}
+    <form
+      action="/end-game/"
+      method="post"
+      id="end-game-form"
+      class="hide-elem"
+    >
+      {% csrf_token %}
+      <input type="text" name="score" id="score-input" />
+      <input type="text" name="flaps" id="flaps-input" />
+    </form>
+    {% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script type="module" src="{% static 'animations/GameAni.js' %}"></script>
+    <script type="module" src="{% static 'animations/Score.js' %}"></script>
+    <script src="{% static 'functionality/ViewController.js' %}"></script>
+  </body>
+  {% include "base_templates/footer.html" %}
+</html>

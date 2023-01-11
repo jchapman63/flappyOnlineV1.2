@@ -1,0 +1,75 @@
+.store-interface {
+    position: relative;
+}
+
+.store-interface h1 {
+    margin: 0.7rem 0 0.5rem;
+    text-align: center;
+}
+
+.store-interface h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.cards-container {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    row-gap: 3rem;
+    margin-bottom: 2rem;
+}
+.purchase-card {
+    align-items: center;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+    width: 50%;
+}
+
+.purchase-card .birdy {
+    width: 90%;
+}
+
+.purchase-card h3 {
+    margin: 1rem 0;
+}
+
+.purchase-card button {
+    background-color: white;
+    border: 2px solid black;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.purchase-card button:hover {
+    background-color: darkgrey;
+    color: white;
+    cursor: pointer;
+}
+
+.purchase-card button img {
+    width: 10%;
+}
+
+.hide-elem {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .store-interface {
+        width: 100%;
+    }
+    .cards-container {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}

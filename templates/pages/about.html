@@ -1,0 +1,88 @@
+{% extends "base_templates/home.html" %}{% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}" />
+<div class="flex-container-horizontal container-round border-black">
+  <div class="call-to-action">
+    <h1>Create An Account and Start Trying to Set The New Highscore</h1>
+    <a href="{% url 'register' %}">Register Now</a>
+  </div>
+  <img class="hero-img" src="{% static 'images/screen.png'%}" alt="" />
+</div>
+{% endblock %} {%block discussion%}
+<div class="accordion-section">
+  <button class="accordion green-bg">Project Goal</button>
+  <div class="panel">
+    <p>
+      Hi, my name is Jordan and thank you for visiting my website. I'm a third
+      year college student learning how to develop websites in my free time. The
+      aim of this project has been to not only cure my winter break boredom but
+      also help me learn more about user authentication, database inquiries, and
+      animations. The original Flappy Bird game is something I wanted to try out
+      creating in Javascript and I later decided to try developing a larger site
+      out of it. I am happy to have built this and I am excited about the new
+      addition to my personal portfolio.
+    </p>
+  </div>
+
+  <button class="accordion green-bg">Game Functionality</button>
+  <div class="panel">
+    <div class="list-collection-horizontal">
+      <div class="list-collection-item">
+        <h3>Game Functionality</h3>
+        <ul>
+          <li>JavaScript Modules (classes)</li>
+          <li>JavaScript Animation Frames</li>
+          <li>HTML objects with CSS styling</li>
+        </ul>
+      </div>
+      <div class="list-collection-item">
+        <h3>Data Models and Management</h3>
+        <ul>
+          <li>Python based Django classes and functions</li>
+          <li>Standard built in Django SQL</li>
+        </ul>
+      </div>
+      <div class="list-collection-item">
+        <h3>User Authentication</h3>
+        <ul>
+          <li>The authentication system is Django’s built in auth system</li>
+          <li>
+            The user profiles are one to one models of Django’s stock user model
+            with useful additions.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <button class="accordion green-bg">Acknowledgements</button>
+  <div class="panel">
+    <p>
+      Thank you to my roommate and girlfriend for listening to me talk about the
+      website and being the first ones to make accounts and play the game. They
+      both kept me motivated and excited to get the project finished just by
+      being around to listen.
+    </p>
+  </div>
+</div>
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+      this.classList.toggle("active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
+
+{% endblock %}

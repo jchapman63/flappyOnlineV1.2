@@ -1,0 +1,30 @@
+{% extends "base_templates/home.html" %} {% load static %} {% block content %}
+
+<!-- create account form -->
+<form
+  action=""
+  class="create-account-form"
+  id="create-account-form"
+  method="post"
+>
+  {% csrf_token %}
+  <h2>Join The Scoreboard</h2>
+  <label for="">email</label>
+  <input type="email" name="email" id="email" />
+  <label for="">username</label>
+  <input type="text" name="username" id="username" />
+  <label for="">password</label>
+  <input type="password" name="password" id="password" />
+  <label for="">confirm password</label>
+  <input type="password" name="confirm-password" id="confirm-password" />
+  <div class="submissions">
+    <button type="submit" form="create-account-form">Register</button>
+    <p>OR</p>
+    <a href="{% url 'game' %}" class="guest-btn">Guest</a>
+  </div>
+  <p>
+    Already have an account?
+    <a href="{% url 'login' %}" class="login-btn">log in</a>!
+  </p>
+</form>
+{% endblock %}

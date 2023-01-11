@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'images/birdy.png'%}"
+    />
+    <script>
+      var my_var = "{% static 'images/birdy.png' %}";
+
+      var my_var1 = "{% static 'images/flappy.png' %}";
+
+      var tube_img = "{% static 'images/tube.png' %}";
+    </script>
+
+    <link rel="stylesheet" href="{% static 'styles/account.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/78c1c44901.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Flappy Online</title>
+  </head>
+  {% include "base_templates/navbar.html" %}
+  <!-- haha cool animation -->
+  <div id="ani-window" class="ani-window"></div>
+  <!-- account nav -->
+  <nav class="stats-nav">
+    <i
+      class="fa-solid fa-bars user-menu-btn"
+      id="btn"
+      onclick="showUserNav()"
+    ></i>
+    <h3>{{user.get_username}}</h3>
+    <div>
+      <p>
+        {{user.profile.coins}}
+        <img src="{% static 'images/coin.png' %}" />
+      </p>
+    </div>
+  </nav>
+  <body>
+    <!-- main account interface -->
+    <div id="acc-window" class="acc-main">
+      <div class="menu-wrapper" id="menu-wrapper">
+        <div id="user-menu" class="user-menu">
+          <h2>User Menu</h2>
+          <ul>
+            <div>
+              <li>
+                <a href="{% url 'store' %}">Store</a>
+              </li>
+            </div>
+
+            <div>
+              <li>
+                <a href="{% url 'inventory' %}">Inventory</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="">Friends</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="{% url 'scoreboard' %}">Scoreboard</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="{% url 'account' %}">My Basics</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="{% url 'game' %}">Play</a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </div>
+      {% block content %} {% endblock%}
+    </div>
+
+    {% include "base_templates/footer.html"%}
+
+    <!-- <img class="birdy" id="birdy" src="images/birdy.png" alt="" /> -->
+    <script type="module" src="{% static 'animations/HomeAni.js' %}"></script>
+    <script>
+      function showUserNav() {
+        var userMenu = document.getElementById("user-menu");
+        var menuWrapper = document.getElementById("menu-wrapper");
+        var btn = document.getElementById("btn");
+        console.log(menuWrapper.style.display);
+        if (userMenu.style.display === "block") {
+          menuWrapper.style.display = "none";
+          userMenu.style.display = "none";
+          btn.classList.remove("active");
+        } else {
+          menuWrapper.style.display = "block";
+          userMenu.style.display = "block";
+          btn.classList.add("active");
+        }
+      }
+    </script>
+  </body>
+</html>
