@@ -62,6 +62,9 @@ MIDDLEWARE = [
 ]
 
 # CSRF_COOKIE_NAME = "XSRF-TOKEN"
+CSRF_TRUSTED_ORIGINS = [
+    'https://flappy_online',
+]
 
 ROOT_URLCONF = 'flappy_online.urls'
 
